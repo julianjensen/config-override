@@ -6,7 +6,6 @@
  * File: index.js
  * @author Julian Jensen <julian@exploreplanet3.com> on 17-AUG-2016
  * @version 0.0.1
- * @copyright Planet3, Inc.
  *******************************************************************************************************/
 'use strict';
 // @formatter:off
@@ -103,7 +102,7 @@ class Configuration
         this.keyAppName = lc( appName.replace( '-', this.opts.hyphenSubstitute ) );
 
         // Grab any app options set as an environment variable
-        this.env = this.parse( process.env, this.opts.delimiter );
+        this.env = this.parse_env( process.env, this.opts.delimiter );
 
         // Grab command line options that are named after the app, i.e. --APPNAME=prop.key=value
         let cli = require( 'minimist' )( process.argv.slice( 2 ) );
@@ -172,7 +171,7 @@ class Configuration
      * @param {string} delim
      * @return {object}
      */
-    parse( obj, delim = '_' )
+    parse_env( obj, delim = '_' )
     {
         const
             keyname = this.keyAppName,
@@ -247,6 +246,7 @@ class Configuration
 
     parse( filename, contents )
     {
+            // console.trace( `filename: ${filename}, contents:`, filename );
         let extIndex = filename.lastIndexOf( '.' ),
             _parser;
 

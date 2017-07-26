@@ -1,6 +1,8 @@
 Configuration File System
 =========================
 
+Not ready for primetime yet. No unit tests. Inspired by `rc` and `acm`, both great but I needed some of both.
+
 For the following examples, I'm assuming we're calling the program `RESTAPI`.
 
 To set a configuration value using an environment variable:

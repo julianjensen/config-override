@@ -15,7 +15,7 @@
     "license": "MIT",
     "dependencies": {
         "ini": "^1.3.4",
-        "json5": "^0.5.1",
+        "json5": "^2.2.2",
         "minimist": "^1.2.0",
         "require-lazy-loader": "0.0.2",
         "yamljs": "^0.2.10"
